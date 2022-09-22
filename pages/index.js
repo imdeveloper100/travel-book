@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Main from "../components/main";
 import Footer from "../components/footer";
 import Signup from "../components/signup";
-import ProfilePage from "../components/profile/profile";
+import ProfilePage from "../components/profile";
 import Navbar from "../components/navbar/navbar";
 
 
@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Header />
       <Navbar />
-      <ProfilePage />
+      {/* <ProfilePage /> */}
       {/* <Signup /> */}
     </div>
   );

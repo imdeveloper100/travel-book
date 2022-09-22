@@ -1,0 +1,71 @@
+.profilePic {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    
+}
+
+.profilePicture{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container {
+    margin-top: 0px;
+    padding: 50px;
+    background-color: lightgray;
+}
+/* 
+.left {
+    background-color: wheat;
+}
+.right {
+    background-color: cyan;
+} */
+
+.subText {
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+.storiesPic {
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+    outline: 1px solid red;
+}
+
+.stories {
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+
+.containerStories{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(221, 221, 179);
+}
+
+.containerButtons {
+    text-align: center;
+    justify-content: center;
+    background-color: grey;
+}
+
+.buttons {
+    color: lightgray;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-radius: 0;  
+}
+
+.buttons:hover {
+    color: grey;
+    background-color: lightgray;
+    transition: .5s ease;
+}

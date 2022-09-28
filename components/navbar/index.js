@@ -156,8 +156,8 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, backgroundColor: "green" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#00000055" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -171,22 +171,23 @@ export default function PrimarySearchAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            component="a"
+            href="#"
+            sx={{ display: { xs: "block", sm: "block" } }}
           >
             Travel Book
           </Typography>
-          <Search className={Styles.search}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Search className={Styles.search}>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
             <IconButton
               size="large"
               aria-label="show 4 new mails"

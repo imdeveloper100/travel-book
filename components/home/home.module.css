@@ -1,10 +1,11 @@
 .container {
-    background-color: #00ffff;
+    background-color: #0b9c7d8a;
     background-image: url("../../public/banner.jpg");
+    background-repeat: no-repeat;
   }
   
   .gridContainer {
-    padding: 100px 0px;
+    padding: 150px 0px;
   }
   
   .searches {
@@ -66,4 +67,3 @@
   }
   
 
-  

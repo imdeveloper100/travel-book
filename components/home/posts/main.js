@@ -31,6 +31,7 @@ const ExpandMore = styled((props) => {
 
 export default function Main() {
   const [expanded, setExpanded] = React.useState(false);
+  const [data, setData] = React.useState();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -433,14 +434,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Shrimp"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -494,14 +495,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Paella"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -555,14 +556,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Chorizo"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -616,14 +617,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Shrimp"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -677,14 +678,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Paella"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -738,14 +739,14 @@ export default function Main() {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
+                title="Chorizo"
                 subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
                 height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
+                image="/post2.jpg"
+                alt="France Tour"
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -782,6 +783,7 @@ export default function Main() {
             </Card>
           </Item>
         </Grid>
+
       </Grid>
     </>
   );

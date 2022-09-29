@@ -1,7 +1,4 @@
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import { Button } from "@mui/material";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Styles from "./home.module.css";

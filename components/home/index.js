@@ -4,20 +4,17 @@ import Typography from "@mui/material/Typography";
 import Styles from "./home.module.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LocationSearchingOutlinedIcon from "@mui/icons-material/LocationSearchingOutlined";
+
 export default function HomePage() {
   const [peopleFieldState, setPeopleFieldState] = React.useState("");
-  const [PlacesFieldState, setPlacesFieldState] = React.useState("");
+  const [placesFieldState, setPlacesFieldState] = React.useState("");
   return (
     <>
       <Grid className={Styles.container} id="topmost-container">
         <Grid className={Styles.gridContainer}>
           <Grid item lg={2} md={6} xs={12} sx={{ m: "10px auto" }}>
-            <Typography
-              variant="h6"
-              component="p"
-              className={Styles.heading}
-            >
-              Travel all over {" "}
+            <Typography variant="h6" component="p" className={Styles.heading}>
+              Travel all over{" "}
               <span className={Styles.headingLast}>the world</span>
             </Typography>
           </Grid>
@@ -28,14 +25,7 @@ export default function HomePage() {
             container
             justifyContent="center"
           >
-            <Grid
-              item
-              lg={4}
-              md={4}
-              s={12}
-              xs={12}
-              className={Styles.grid}
-            >
+            <Grid item lg={4} md={4} s={12} xs={12} className={Styles.grid}>
               <SearchOutlinedIcon className={Styles.icons} />
               <input
                 name="people"
@@ -50,21 +40,14 @@ export default function HomePage() {
                 aria-describedby="search-field-helper-text"
               />
             </Grid>
-            <Grid
-              item
-              lg={4}
-              md={4}
-              s={12}
-              xs={12}
-              className={Styles.grid}
-            >
+            <Grid item lg={4} md={4} s={12} xs={12} className={Styles.grid}>
               <LocationSearchingOutlinedIcon className={Styles.icons} />
               <input
                 name="Places"
                 label="Places"
                 id="search-field"
                 placeholder="Places..."
-                value={PlacesFieldState}
+                value={placesFieldState}
                 onChange={(event) => {
                   setPlacesFieldState(event.target.value);
                 }}
@@ -77,4 +60,3 @@ export default function HomePage() {
     </>
   );
 }
-

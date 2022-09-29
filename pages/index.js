@@ -1,5 +1,5 @@
 import HomePage from "../components/home";
-import Main from "../components/home/posts/main.js";
+import Main from "../components/posts";
 
 export default function Home() {
   return (

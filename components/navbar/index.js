@@ -10,12 +10,29 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import Link from "next/link";
+import Button from "@mui/material/Button";
 import Styles from "./navbar.module.css";
+
+
+const pages = [
+  {
+    link: "/",
+    name: "Home",
+  },
+  {
+    link: "/posts",
+    name: "Posts",
+  },
+  {
+    link: "/profile",
+    name: "Profile",
+  },
+];
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,6 +77,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -157,37 +184,98 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: "green" }}>
-      <AppBar position="static" sx={{ backgroundColor: "#00000055" }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#00000055", p: "5px 0px" }}
+      >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            {/* <MenuIcon /> */}
-          </IconButton>
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
-            href="#"
-            sx={{ display: { xs: "block", sm: "block" } }}
+            href="/"
+            sx={{ fontFamily: "monospace", mr:"60px", display: { xs: "none", md: "flex", } }}
           >
             Travel Book
           </Typography>
+
+
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon sx={{ ml: "-10px" }} />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page, i) => (
+                <MenuItem key={i} onClick={handleCloseNavMenu}>
+                  <Link href={page.link}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              letterSpacing: ".1rem",
+              color: "inherit",
+              justifyContent: "center",
+              textDecoration: "none",
+            }}
+          >
+            Travel Book
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page, i) => (
+              <Link key={i} href={page.link}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    color: "white",
+                    display: "block",
+                    ml: "15px",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
+            ))}
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Search className={Styles.search}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
@@ -197,6 +285,7 @@ export default function PrimarySearchAppBar() {
                 <MailIcon />
               </Badge>
             </IconButton>
+
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

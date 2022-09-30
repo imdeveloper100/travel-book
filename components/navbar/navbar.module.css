@@ -6,3 +6,17 @@
     display: flex;
     flex-grow: 1;
 }
+
+.signInBtn {
+    background-color: black;
+    border-radius: 25px;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    color: white;
+    border: 1px solid rgb(2, 184, 2);
+    margin-left: 30px;
+}
+.signInBtn:hover {
+    background-color: rgb(0, 0, 0, .25);
+    border: 1px solid rgb(0, 255, 0);
+}

@@ -18,7 +18,6 @@ import Link from "next/link";
 import Button from "@mui/material/Button";
 import Styles from "./navbar.module.css";
 
-
 const pages = [
   {
     link: "/",
@@ -79,7 +78,6 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -148,12 +146,20 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <Link href="../chat">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <Badge badgeContent={4} color="error">
+              <MailIcon />
+            </Badge>
+            <Typography sx={{ ml: "12px" }} variant="body1">
+              Messages
+            </Typography>
+          </IconButton>
+        </Link>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -169,6 +175,7 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
+          href={"./profile"}
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -179,6 +186,11 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <Link href={"/login"}>
+        <Button className={Styles.signInBtn} variant="outlined">
+          Login
+        </Button>
+      </Link>
     </Menu>
   );
 
@@ -194,11 +206,14 @@ export default function PrimarySearchAppBar() {
             noWrap
             component="a"
             href="/"
-            sx={{ fontFamily: "monospace", mr:"60px", display: { xs: "none", md: "flex", } }}
+            sx={{
+              fontFamily: "monospace",
+              mr: "60px",
+              display: { xs: "none", md: "flex" },
+            }}
           >
             Travel Book
           </Typography>
-
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -242,7 +257,7 @@ export default function PrimarySearchAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="./"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -282,7 +297,9 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <Link href="../chat">
+                  <MailIcon />
+                </Link>
               </Badge>
             </IconButton>
 
@@ -296,6 +313,7 @@ export default function PrimarySearchAppBar() {
               </Badge>
             </IconButton>
             <IconButton
+              href={"./profile"}
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -306,6 +324,11 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
+            <Link href={"/login"}>
+              <Button className={Styles.signInBtn} variant="outlined">
+                Login
+              </Button>
+            </Link>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

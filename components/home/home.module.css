@@ -38,10 +38,11 @@
     font-size: 56px;
     padding-top: 20px;
     text-align: center;
+    font-family:Georgia;
   }
   
   .headingLast {
-    color: blue;
+    color: #007527;
     font-style: italic;
   }
   

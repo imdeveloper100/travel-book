@@ -28,10 +28,6 @@ const pages = [
     name: "Posts",
   },
   {
-    link: "/profile",
-    name: "Profile",
-  },
-  {
     link: "/upload",
     name: "Upload",
   },
@@ -152,7 +148,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <Link href="../chat">
           <IconButton
-            size="large"
+            // size="large"
             aria-label="show 4 new mails"
             color="inherit"
           >
@@ -177,19 +173,20 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          href={"./profile"}
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      <Link href={"./profile"}>
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <AccountCircle />
+          </IconButton>
+          <Typography>Profile</Typography>
+        </MenuItem>
+      </Link>
       <Link href={"/login"}>
         <Button className={Styles.signInBtn} variant="outlined">
           Login
@@ -316,18 +313,19 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              href={"./profile"}
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            <Link href={"./profile"}>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                // onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Link>
             <Link href={"/login"}>
               <Button className={Styles.signInBtn} variant="outlined">
                 Login

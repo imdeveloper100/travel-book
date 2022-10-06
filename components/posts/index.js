@@ -21,6 +21,38 @@ import Box from "@mui/material/Box";
 import Styles from "./main.module.css";
 import { Link } from "@mui/material";
 
+const userData = [
+  {
+    user: [
+      {
+        title: "Kaghan",
+        description:
+          "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels",
+      },
+      {
+        title: "Kashmir",
+        description:
+          "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels",
+      },
+      {
+        title: "Gilgit",
+        description:
+          "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels",
+      },
+      {
+        title: "Swat",
+        description:
+          "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels",
+      },
+      {
+        title: "Kumrat",
+        description:
+          "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels",
+      },
+    ],
+  },
+];
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -37,10 +69,7 @@ export default function Main() {
   const [expanded1, setExpanded1] = React.useState(false);
   const [data, setData] = React.useState();
 
-
-  const handlePostClick = () => {
-
-  }
+  const handlePostClick = () => {};
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -53,485 +82,648 @@ export default function Main() {
           </Typography>
         </Item>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-              link= {
-                <Link href="./profile"></Link>
-              }
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="user"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/paella.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[0].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[0].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-              link= {
-                <Link href="./profile"></Link>
-              }
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="user"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/paella.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[1].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[1].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-              link= {
-                <Link href="./profile"></Link>
-              }
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="user"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/paella.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[2].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[2].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-              link= {
-                <Link href="./profile"></Link>
-              }
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="user"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/paella.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[3].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[3].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/paella.jpg"
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
+        </Grid>
+        <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/paella.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[4].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[4].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
       </Grid>
       <Grid container spacing={2}>
-        <Item>
+      <Item>
           <Typography className={Styles.heading} variant="h3" component="h3">
             Popular Posts of the week
           </Typography>
         </Item>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[0].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[0].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[1].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[1].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[2].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[2].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Chorizo"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[3].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[3].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Shrimp"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[4].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[4].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Paella"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
         <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
-          <Item className={Styles.cardItem}>
-            <Card className={Styles.card} sx={{ maxWidth: 350 }}>
-              <CardHeader
-                avatar={
-                  <Avatar
-                    sx={{ bgcolor: red[500] }}
-                    aria-label="recipe"
-                    alt="Agent Carter"
-                    src="/Peggy_Carter.jpg"
-                  />
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[4].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[4].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
                   </IconButton>
-                }
-                title="Chorizo"
-                subheader="September 14, 2016"
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image="/post2.jpg"
-                alt="France Tour"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal
-                  to cook together with your guests. Add 1 cup of frozen peas
-                  along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button variant="contained"> View Post </Button>
-              </CardActions>
-            </Card>
-          </Item>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
         </Grid>
-
+        <Grid className={Styles.cardGrid} item xs={12} md={4} lg={3}>
+          {userData.map((data, i) => (
+            <Item className={Styles.cardItem}>
+              <Card key={i} className={Styles.card} sx={{ maxWidth: 350 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user"
+                      alt="Agent Carter"
+                      src="/Peggy_Carter.jpg"
+                    />
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Shrimp and Chorizo Paella"
+                  subheader="September 14, 2016"
+                />
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image="/post2.jpg"
+                  alt="Paella dish"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h5"
+                    color="text.primary"
+                    sx={{ mb: "2px" }}
+                  >
+                    {data.user[4].title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {data.user[4].description}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Button variant="contained"> View Post </Button>
+                </CardActions>
+              </Card>
+            </Item>
+          ))}
+        </Grid>
       </Grid>
     </>
   );

@@ -31,6 +31,10 @@ const pages = [
     link: "/profile",
     name: "Profile",
   },
+  {
+    link: "/upload",
+    name: "Upload",
+  },
 ];
 
 const Search = styled("div")(({ theme }) => ({
@@ -298,7 +302,7 @@ export default function PrimarySearchAppBar() {
             >
               <Badge badgeContent={4} color="error">
                 <Link href="../chat">
-                  <MailIcon />
+                  <Typography>Chat</Typography>
                 </Link>
               </Badge>
             </IconButton>

@@ -1,71 +1,84 @@
 .profilePic {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    /* margin-left: auto; */
-    
+  position: relative;
+  width: 150px;
+  height: 150px;
+  /* margin-left: auto; */
 }
 
 .uploadDP {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .profilePicture{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    /* margin-left: auto; */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* margin-left: auto; */
 }
 
 .right {
-    margin-right: auto;
+  margin-right: auto;
 }
 .container {
-    margin-top: 0px;
-    padding: 20px 0px;
-    background-color: lightgray;
+  margin-top: 0px;
+  padding: 20px 0px;
+  background-color: lightgray;
 }
 
 .subText {
-    padding-right: 20px;
-    margin-right: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
 }
 
 .storiesPic {
-    height: 100px;
-    width: 100px;
-    border: 2px solid white;
-    outline: 1px solid red;
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  outline: 1px solid red;
 }
 
 .stories {
-    display: inline-block;
-    padding: 0px 20px;
-
+  display: inline-block;
+  padding: 0px 20px;
 }
 
-.containerStories{
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-    background-color: rgb(221, 221, 179);
+.containerStories {
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(221, 221, 179);
 }
 
 .containerButtons {
-    text-align: center;
-    justify-content: center;
-    background-color: grey;
+  text-align: center;
+  justify-content: center;
+  background-color: grey;
 }
 
-.buttons {  
-    color: lightgray;
-    padding: 10px 20px;
-    border-radius: 0;  
+.buttons {
+  color: lightgray;
+  padding: 10px 20px;
+  border-radius: 0;
 }
 
 .buttons:hover {
-    color: grey;
-    background-color: lightgray;
-    transition: .5s ease;
+  color: grey;
+  background-color: lightgray;
+  transition: 0.5s ease;
+}
+
+/* Posts Styling */
+
+.cardGrid {
+  margin: 20px 0px 0px;
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 5px 10px 20px #00000025;
+}
+
+.cardItem {
+  justify-content: center;
 }
